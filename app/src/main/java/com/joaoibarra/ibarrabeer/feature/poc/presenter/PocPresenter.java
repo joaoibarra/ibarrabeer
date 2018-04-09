@@ -29,12 +29,18 @@ public class PocPresenter implements PocContract.Presenter, PocContract.OnGetPoc
     }
 
     private SearchPoc createSearchPoc(CharSequence searchAddress, Location location){
-       /* return new SearchPoc()
+        /***
+         * Aqui é o código para uso dinâmico
+         */
+        /* return new SearchPoc()
                 .setAlgorithm("NEAREST")
                 .setLatitude(location.getLatitude())
                 .setLongitude(location.getLongitude())
                 .setNow(DateUtil.getNow());*/
 
+        /***
+         * Aqui é o código para uso mockado
+         */
         return new SearchPoc()
                 .setAlgorithm("NEAREST")
                 .setLatitude(-23.632919)

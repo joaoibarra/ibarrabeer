@@ -2,14 +2,10 @@ package com.joaoibarra.ibarrabeer.feature.product.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.joaoibarra.ibarrabeer.R;
-import com.joaoibarra.ibarrabeer.feature.product.presenter.ProductListPresenter;
-import com.joaoibarra.ibarrabeer.model.PocSearch;
 import com.joaoibarra.ibarrabeer.model.Product;
 import com.squareup.picasso.Picasso;
 
@@ -41,6 +37,8 @@ public class ProductActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
         ButterKnife.bind(this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(getString(R.string.product_detail));
     }
 
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
@@ -64,5 +62,11 @@ public class ProductActivity extends AppCompatActivity{
     public void onStop() {
         EventBus.getDefault().unregister(this);
         super.onStop();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();        
+        return true;
     }
 }

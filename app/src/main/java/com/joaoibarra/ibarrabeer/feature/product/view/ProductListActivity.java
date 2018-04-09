@@ -3,12 +3,9 @@ package com.joaoibarra.ibarrabeer.feature.product.view;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.google.android.gms.location.LocationServices;
 import com.joaoibarra.ibarrabeer.R;
-import com.joaoibarra.ibarrabeer.feature.poc.presenter.PocPresenter;
 import com.joaoibarra.ibarrabeer.feature.product.contract.ProductListContract;
 import com.joaoibarra.ibarrabeer.feature.product.presenter.ProductListPresenter;
 import com.joaoibarra.ibarrabeer.model.PocSearch;
@@ -36,6 +33,7 @@ public class ProductListActivity extends AppCompatActivity implements ProductLis
         setContentView(R.layout.activity_product_list);
         ButterKnife.bind(this);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         productListPresenter = new ProductListPresenter(this);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
@@ -44,6 +42,7 @@ public class ProductListActivity extends AppCompatActivity implements ProductLis
 
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
     public void setPocSearch(PocSearch pocSearch) {
+        getSupportActionBar().setTitle(pocSearch.getAddress().getAddress1() + ", " + pocSearch.getAddress().getNumber() + ", " + pocSearch.getAddress().getCity());
         productListPresenter.getProducts(pocSearch, "", 0);
     }
 
@@ -68,5 +67,11 @@ public class ProductListActivity extends AppCompatActivity implements ProductLis
     @Override
     public void onGetDataFailure(String message) {
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
     }
 }

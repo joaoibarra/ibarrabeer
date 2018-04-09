@@ -2,6 +2,7 @@
     <string name="app_name">IbarraBeer</string>
     <string name="poc_title">E aí, Zé. Onde você está?</string>
     <string name="unknown_street">Rua Genérica</string>
+    <string name="product_detail">Detalhe do Produto</string>
     <string name="description">Descrição</string>
     <string name="poc_subtitle">Vou usar seu endereço para procurar as cervejas mais daora do pedaço!</string>
 </resources>
