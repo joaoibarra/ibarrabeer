@@ -13,23 +13,26 @@ public class SearchProduct {
         return id;
     }
 
-    public void setId(String id) {
+    public SearchProduct setId(String id) {
         this.id = id;
+        return this;
     }
 
     public String getSearch() {
         return search;
     }
 
-    public void setSearch(String search) {
+    public SearchProduct setSearch(String search) {
         this.search = search;
+        return this;
     }
 
     public int getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public SearchProduct setCategoryId(int categoryId) {
         this.categoryId = categoryId;
+        return this;
     }
 }

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.joaoibarra.ibarrabeer.R;
+import com.joaoibarra.ibarrabeer.feature.product.view.ProductListActivity;
 import com.joaoibarra.ibarrabeer.model.Address;
 import com.joaoibarra.ibarrabeer.model.PocSearch;
 
@@ -68,7 +69,8 @@ public class PocAdapter extends RecyclerView.Adapter<PocAdapter.ViewHolder>{
         @OnClick(R.id.cardView)
         public void onClickCard(){
             EventBus.getDefault().postSticky(list.get(position));
-            //Intent intent = new Intent(this, ProductActivity.class);
+            Intent intent = new Intent(context, ProductListActivity.class);
+            context.startActivity(intent);
         }
     }
 }
