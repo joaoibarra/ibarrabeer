@@ -61,7 +61,7 @@ public class ProductListActivity extends AppCompatActivity implements ProductLis
 
     @Override
     public void onGetDataSuccess(String message, List<Product> list) {
-        productAdapter = new ProductAdapter(getApplicationContext(), list);
+        productAdapter = new ProductAdapter(this, list);
         productRecyclerView.setAdapter(productAdapter);
     }
 

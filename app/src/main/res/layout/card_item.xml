@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp">
-    <android.support.constraint.ConstraintLayout
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/productImageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:transitionName="productImage"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/btn_star" />
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            android:fitsSystemWindows="false"
+            android:scaleType="fitXY"
+            app:srcCompat="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/tvPrice"
@@ -30,28 +35,34 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:gravity="center_horizontal|center"
             android:text="Cerveja"
             android:textColor="#161616"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/productImageView" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:transitionName="productTitle"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
+            android:gravity="center_horizontal|center"
             android:text="Descrição"
             android:textColor="#161616"
-            android:textSize="18dp"
-            android:gravity="top"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
-    </android.support.constraint.ConstraintLayout>
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center_horizontal|top"
+            android:text="lololo"
+            android:textColor="#161616"
+            android:textSize="12sp" />
+    </LinearLayout>
 </android.support.v7.widget.CardView>

@@ -22,6 +22,7 @@
         </activity>
 
         <activity android:name=".feature.product.view.ProductListActivity"/>
+        <activity android:name=".feature.product.view.ProductActivity"/>
     </application>
 
 </manifest>
