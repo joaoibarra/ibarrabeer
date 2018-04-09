@@ -30,15 +30,10 @@ public class ProductListInteractor implements ProductListContract.Interactor{
             public void onResponse(retrofit2.Call<ProductResponse> call, retrofit2.Response<ProductResponse> response) {
                 ProductResponse jsonResponse = response.body();
                 products = jsonResponse.getData().getPoc().getProducts();
-                for(int i=0; i<products.size();i++){
-                    productsData.add(products.get(i).getProductVariants().get(0).getTitle());
-                }
-                Log.d("Data", "Refreshed");
-                onGetProductResponseListener.onSuccess("List Size: " + productsData.size(), products);
+                onGetProductResponseListener.onSuccess(response.message(), products);
             }
             @Override
             public void onFailure(retrofit2.Call<ProductResponse> call, Throwable t) {
-                Log.v("Error",t.getMessage());
                 onGetProductResponseListener.onFailure(t.getMessage());
             }
         });

@@ -27,12 +27,12 @@ public class PocInteractor implements PocContract.Interactor{
         call.enqueue(new retrofit2.Callback<PocResponse>(){
             @Override
             public void onResponse(Call<PocResponse> call, Response<PocResponse> response) {
-                onGetPocResponseListener.onSuccess("teste", response.body());
+                onGetPocResponseListener.onSuccess(response.message(), response.body());
             }
 
             @Override
             public void onFailure(Call<PocResponse> call, Throwable t) {
-                onGetPocResponseListener.onFailure("deu ruim teste");
+                onGetPocResponseListener.onFailure(t.getMessage());
             }
         });
     }

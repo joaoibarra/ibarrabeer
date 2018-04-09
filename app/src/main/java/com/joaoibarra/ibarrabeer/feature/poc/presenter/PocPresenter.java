@@ -6,9 +6,6 @@ import com.joaoibarra.ibarrabeer.feature.poc.contract.PocContract;
 import com.joaoibarra.ibarrabeer.feature.poc.model.PocInteractor;
 import com.joaoibarra.ibarrabeer.model.PocResponse;
 import com.joaoibarra.ibarrabeer.model.search.SearchPoc;
-import com.joaoibarra.ibarrabeer.util.DateUtil;
-
-import java.util.List;
 
 /**
  * Created by joaoibarra on 08/04/18.

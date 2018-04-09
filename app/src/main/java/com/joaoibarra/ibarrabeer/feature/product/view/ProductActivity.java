@@ -66,7 +66,7 @@ public class ProductActivity extends AppCompatActivity{
 
     @Override
     public boolean onSupportNavigateUp(){
-        onBackPressed();        
+        onBackPressed();
         return true;
     }
 }

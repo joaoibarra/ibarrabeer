@@ -1,6 +1,5 @@
 package com.joaoibarra.ibarrabeer.feature.poc.contract;
 
-import android.content.Context;
 import android.location.Location;
 
 import com.joaoibarra.ibarrabeer.model.PocResponse;
